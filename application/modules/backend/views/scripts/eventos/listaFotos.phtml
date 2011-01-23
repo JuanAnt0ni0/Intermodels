@@ -1,0 +1,16 @@
+<?php
+$this->headLink()->prependStylesheet( $this->baseUrl().'/css/colorbox.css' );
+$this->headScript()->prependFile( $this->baseUrl() . '/scripts/lib/jquery.colorbox.js' );
+?>
+<?php if (!is_null($this->Evento->Photos)) : ?>
+<div id="listaFotos">
+    <ul>
+    <?php foreach ($this->Evento->Photos as $photo) : ?>
+        <li>
+            <a href="<?php echo $photo->thumbnail_3; ?>" rel="fotos"  title="<?php echo $photo->descripcion; ?>"><img src="<?php echo $photo->thumbnail_1; ?>" alt="<?php echo $photo->descripcion; ?>" /></a>
+            <div><a href='<?php echo $this->url(array('evento' => $this->evento->id, 'photo' => $photo->id), 'deleteFotoEvento') ?>' title='Eliminar'>Eliminar</a></div>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

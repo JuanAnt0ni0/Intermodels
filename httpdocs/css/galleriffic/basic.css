@@ -1,0 +1,66 @@
+html, body {
+	margin:0;
+	padding:0;
+}
+
+#pageModelos{
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	color: #444;
+	font-size: 75%;
+	/*height: 560px;*/
+}
+
+#pageModelos a{
+	color:#707070;
+	text-decoration: none;
+}
+#pageModelos a:focus, a:hover, a:active {
+	text-decoration: none;
+	color: #C764EC;
+}
+#pageModelos p, li {
+	line-height: 1.8em;
+}
+#pageModelos h1, h2 {
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	margin: 0 0 10px 0;
+	letter-spacing:-1px;
+}
+#pageModelos h1 {
+	padding: 0;
+	font-size: 3em;
+	color: #333;
+}
+#pageModelos h2 {
+	padding-top: 10px;
+	font-size:2em;
+}
+#pageModelos pre {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	overflow-x: auto;
+}
+#pageModelos #page {
+	width: 900px;
+	/*background-color: #fff;*/
+	margin: 0 auto;
+	text-align: left;
+	border-color: #ddd;
+	border-style: none solid solid;
+	border-width: medium 1px 1px;
+}
+#pageModelos #container {
+	padding: 20px;
+	background: transparent url(../../images/fronted/back_black.png) top left repeat;
+}
+#pageModelos #ads {
+	clear: both;
+	padding: 12px 0 12px 66px;
+}
+#pageModelos #footer {
+	clear: both;
+	color: #777;
+	margin: 0 auto;
+	padding: 20px 0 40px;
+	text-align: center;
+}

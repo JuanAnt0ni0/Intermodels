@@ -1,0 +1,26 @@
+<table class="tgrande">
+<caption>Lista de eventos</caption>
+<thead class="tcabecera">
+    <tr>
+        <th>Titulo</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th colspan="4">Opciones</th>
+    </tr>
+</thead>
+<tbody class="datos">
+<?php foreach ($this->Eventos as $evento) : ?>
+    <tr>
+        <td><?php echo $evento->titulo ?></td>
+        <td><?php echo $evento->fecha ?></td>
+        <td><?php echo $evento->status ?></td>
+        <td><a href="<?php echo $this->url(array('evento' => $evento->id), 'detalleEvento') ?>">Detalle</a></td>
+        <td><a href="<?php echo $this->url(array('evento' => $evento->id), 'editEvento') ?>">Editar</a></td>
+        <td><a href="<?php echo $this->url(array('evento' => $evento->id), 'deleteEvento') ?>">Eliminar</a></td>
+        <?php if(!$evento->status) :?>
+        <td><a href="<?php echo $this->url(array('evento' => $evento->id), 'activarEvento') ?>">Activar</a></td>
+        <?php endif; ?>
+    </tr>
+<?php endforeach; ?>
+</tbody>
+</table>

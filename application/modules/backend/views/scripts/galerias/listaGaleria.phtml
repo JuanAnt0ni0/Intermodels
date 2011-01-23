@@ -1,0 +1,24 @@
+<table class="tgrande">
+<caption>Lista de Galerias</caption>
+<thead class="tcabecera">
+    <tr>
+        <th>Titulo</th>
+        <th>Estado</th>
+        <th colspan="4">Opciones</th>
+    </tr>
+</thead>
+<tbody class="datos">
+<?php foreach ($this->Galerias as $galeria) : ?>
+    <tr>
+        <td><?php echo $galeria->titulo ?></td>
+        <td><?php echo $galeria->status ?></td>
+        <td><a href="<?php echo $this->url(array('galeria' => $galeria->id), 'detalleGaleria') ?>">Detalle</a></td>
+        <td><a href="<?php echo $this->url(array('galeria' => $galeria->id), 'editGaleria') ?>">Editar</a></td>
+        <td><a href="<?php echo $this->url(array('galeria' => $galeria->id), 'deleteGaleria') ?>">Eliminar</a></td>
+        <?php if(!$galeria->status) :?>
+        <td><a href="<?php echo $this->url(array('galeria' => $galeria->id), 'activarGaleria') ?>">Activar</a></td>
+        <?php endif; ?>
+    </tr>
+<?php endforeach; ?>
+</tbody>
+</table>

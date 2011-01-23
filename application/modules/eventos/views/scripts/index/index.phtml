@@ -1,0 +1,11 @@
+<div id="pageEventos">
+    <?php foreach ($this->eventos as $evento) : ?>
+    <div>
+        <p>
+            <?php echo $evento->titulo; ?> -
+            <?php echo $evento->fecha; ?> -
+            <a href="<?php echo $this->url(array('evento' => $evento->id, 'titulo' => $evento->titulo), 'eventoView') ?>">detalles</a>
+        </p>
+    </div>
+    <?php endforeach; ?>
+</div>

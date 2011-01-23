@@ -1,0 +1,14 @@
+<div id="pageEvento">
+    <div class="sg-35">
+    <a href="<?php echo $this->url(array(), 'addEvento') ?>">Nuevo Evento</a>
+    <?php
+    if($this->eventos->count()){
+        echo $this->partial()->setObjectKey('Eventos')
+                             ->partial('eventos/listaEvento.phtml', $this->eventos);
+        echo $this->paginationControl($this->eventos, 'Sliding', 'eventos/paginationEvento.phtml');
+    }else{
+        ?><div>No existen Modelos</div><?php
+    }
+    ?>
+    </div>
+</div>

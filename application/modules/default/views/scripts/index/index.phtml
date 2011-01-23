@@ -1,0 +1,30 @@
+<?php
+$this->headLink()->prependStylesheet( $this->baseUrl().'/css/bxSlider.css' );
+$this->headScript()->prependFile( $this->baseUrl() . '/scripts/lib/jquery.bxSlider.js' );
+?>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#slider1').bxSlider({
+            auto: true,
+            autoControls: false,
+            autoHover: true,
+            pager: true,
+            pause: 5000,
+            controls: false
+        });
+        $('#carrusel').removeClass('overfhidd')
+    });
+</script>
+<div id="carrusel" class="overfhidd">
+    <ul id="slider1">
+        <li><a href="<?php echo $this->url(array(), 'Perfiles') ?>"><img src="<?php echo $this->baseUrl(); ?>/images/fronted/carrusel/001_Perfiles.jpg" alt="imagencarro" width="740" height="300" /></a></li>
+        <li><img src="<?php echo $this->baseUrl(); ?>/images/fronted/carrusel/002_Castings.jpg" alt="imagencarro" width="740" height="300" /></li>
+    </ul>
+</div>
+<div id="mcajas">
+<div id="caja1" class="caja"><a href="http://www.facebook.com/intermodels.es" target="_blank"><img src="<?php echo $this->baseUrl(); ?>/images/fronted/fb.png" alt="Facebook"/></a> 
+  <p><strong>Agr&eacute;ganos</strong></p>
+      <p>Sigue todas nuestras actividades</p> 
+</div>
+<div id="caja2" class="caja" > </div>
+</div>

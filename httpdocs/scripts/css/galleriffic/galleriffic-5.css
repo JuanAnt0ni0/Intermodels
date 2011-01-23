@@ -1,0 +1,197 @@
+div#container {
+	overflow: hidden;
+}
+#pageModelos .content {
+	display: none;
+	clear: both;
+}
+
+#pageModelos .content a, div.navigation a {
+	text-decoration: none;
+}
+#pageModelos .content a:hover, div.content a:active {
+	text-decoration: underline;
+}
+
+#pageModelos .navigation a.pageLink {
+	height: 77px;
+	line-height: 77px;
+}
+
+#pageModelos .controls {
+	margin-top: 5px;
+	height: 23px;
+}
+#pageModelos .controls a {
+	padding: 5px;
+}
+#pageModelos .ss-controls {
+	float: left;
+}
+#pageModelos .nav-controls {
+	float: right;
+}
+
+#pageModelos .slideshow-container,
+#pageModelos .loader,
+#pageModelos .slideshow a.advance-link {
+	width: 510px; /* This should be set to be at least the width of the largest image in the slideshow with padding */
+}
+
+#pageModelos .loader,
+#pageModelos .slideshow a.advance-link,
+#pageModelos .caption-container {
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow with padding */	
+}
+
+#pageModelos .slideshow-container {
+	position: relative;
+	clear: both;
+	float: left;
+	height: 532px;
+}
+
+#pageModelos .loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('../../images/galleriffic/loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#pageModelos .slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+#pageModelos .slideshow a.advance-link {
+	display: block;
+	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow with padding */
+	text-align: center;
+}
+
+#pageModelos .slideshow a.advance-link:hover,
+#pageModelos .slideshow a.advance-link:active,
+#pageModelos .slideshow a.advance-link:visited {
+	text-decoration: none;
+}
+#pageModelos .slideshow a.advance-link:focus {
+	outline: none;
+}
+
+#pageModelos .slideshow img {
+	border-style: solid;
+	border-width: 1px;
+}
+#pageModelos .caption-container {
+	float: right;
+	position: relative;
+	margin-top: 30px;
+}
+#pageModelos span.image-caption {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#pageModelos .caption-container, #pageModelos span.image-caption {
+	width: 334px;
+}
+
+#pageModelos .caption {
+	padding: 0 12px;
+}
+
+#pageModelos .image-title {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#pageModelos .image-desc {
+	line-height: 1.3em;
+	padding-top: 12px;
+}
+#pageModelos .download {
+	margin-top: 8px;
+}
+#pageModelos .photo-index {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 0 12px;
+}
+#pageModelos .navigation-container {
+	float: left;
+	position: relative;
+	left: 50%;
+}
+#pageModelos .navigation {
+	float: left;
+	position: relative;
+	left: -50%;
+}
+#pageModelos .navigation a.pageLink {
+	display: block;
+	position: relative;
+	float: left;
+	margin: 2px;
+	width: 16px;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#pageModelos .navigation a.pageLink:focus {
+	outline: none;
+}
+
+#pageModelos ul.thumbs {
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#pageModelos ul.thumbs li {
+	float: left;
+	padding: 0;
+	margin: 2px;
+	list-style: none;
+}
+#pageModelos a.thumb {
+	padding: 1px;
+	display: block;
+}
+#pageModelos a.thumb:focus {
+	outline: none;
+}
+#pageModelos ul.thumbs img {
+	border: none;
+	display: block;
+}
+#pageModelos .pagination {
+	clear: both;
+	position: relative;
+	left: -50%;
+}
+#pageModelos .pagination a, #pageModelos .pagination span.current, #pageModelos .pagination span.ellipsis {
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #ccc;
+}
+#pageModelos .pagination a:hover {
+	text-decoration: none;
+}
+#pageModelos .pagination span.current {
+	font-weight: bold;
+}
+#pageModelos .pagination span.ellipsis {
+	border: none;
+	padding: 5px 0 3px 2px;
+}
+
+#pageModelos .gallery-gutter {
+	clear: both;
+	padding-bottom: 20px;
+}

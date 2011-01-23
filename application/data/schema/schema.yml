@@ -1,0 +1,130 @@
+actAs: [Timestampable]
+options:
+  type: INNODB
+  collate: utf8_general_ci
+  charset: utf8
+
+Usuario:
+  tableName: usuarios
+  columns:
+    nombres: { type: string(60), notnull: true, notblank: true }
+    apellidos: { type: string(60), notnull: true, notblank: true }
+    telefono: { type: string(60), notnull: true, notblank: true }
+    email: { type: string(60), notnull: true, notblank: true }
+    password: { type: string(32), notnull: true, notblank: true }
+    admin: { type: boolean, default: false }
+    status: { type: boolean, default: false }
+
+Modelo:
+  columns:
+    album_id: { type: integer(20) }
+    nombres: { type: string(60), notnull: true, notblank: true }
+    apellidos: { type: string(60), notnull: true, notblank: true }
+    telefono: { type: string(60), notnull: true, notblank: true }
+    email: { type: string(60), notnull: true, notblank: true, email: true }
+    nacimiento: { type: date, notnull: true, notblank: true }
+    nacionalidad: { type: string(30), notnull: false, notblank: false }
+    pais: { type: string(30), notnull: false, notblank: false }
+    estatura: { type: integer(3), notnull: true, notblank: true }
+    zapato: { type: integer(2), notnull: false, notblank: false }
+    peso: { type: integer(3), notnull: true, notblank: true }
+    ojos: { type: string(30), notnull: true, notblank: true }
+    cabello: { type: string(30), notnull: true, notblank: true }
+    longitud_pelo: { type: string(30), notnull: false, notblank: false }
+    idiomas: { type: string(60), notnull: false, notblank: false }
+    talento: { type: string(30), notnull: false, notblank: false }
+    descripcion: { type: string(600), notnull: true, notblank: true }
+    sexo:
+      type: enum
+      values: [Hombre, Mujer]
+    pecho: { type: integer(3) }
+    cintura: { type: integer(3) }
+    cadera: { type: integer(3) }
+    torax: { type: integer(3) }
+    status:
+      type: boolean
+      default: false
+  relations:
+    Photos:
+      class: Photo
+      local: modelo_id
+      foreign: photo_id
+      refClass: ModeloPhoto
+      onDelete: CASCADE
+
+Evento:
+  columns:
+    album_id: { type: integer(20) }
+    titulo: { type: string(60), notnull: true, notblank: true }
+    contenido: { type: string(400), notnull: true, notblank: true }
+    fecha: { type: date, notnull: true, notblank: true }
+    hora: { type: time, notnull: true, notblank: true }
+    status:
+      type: boolean
+      default: false
+  relations:
+    Photos:
+      class: Photo
+      local: evento_id
+      foreign: photo_id
+      refClass: EventoPhoto
+      onDelete: CASCADE
+
+Galeria:
+  columns:
+    album_id: { type: integer(20) }
+    titulo: { type: string(60), notnull: true, notblank: true }
+    contenido: { type: string(400), notnull: true, notblank: true }
+    status:
+      type: boolean
+      default: false
+  relations:
+    Photos:
+      class: Photo
+      local: galeria_id
+      foreign: photo_id
+      refClass: GaleriaPhoto
+      onDelete: CASCADE
+      
+Photo:
+  tableName: photos
+  columns:
+    descripcion: { type: string(60) }
+    photo_id: { type: string(20) }
+    original: { type: string(100) }
+    thumbnail_1: { type: string(100) }
+    thumbnail_2: { type: string(100) }
+    thumbnail_3: { type: string(100) }
+  relations:
+    Modelos:
+      class: Modelo
+      local: photo_id
+      foreign: modelo_id
+      refClass: ModeloPhoto
+      onDelete: CASCADE
+    Eventos:
+      class: Evento
+      local: photo_id
+      foreign: evento_id
+      refClass: EventoPhoto
+    Galerias:
+      class: Galeria
+      local: photo_id
+      foreign: galeria_id
+      refClass: GaleriaPhoto
+      onDelete: CASCADE
+
+ModeloPhoto:
+  columns:
+    modelo_id: { type: integer, primary: true }
+    photo_id: { type: integer, primary: true }
+
+EventoPhoto:
+  columns:
+    evento_id: { type: integer, primary: true }
+    photo_id: { type: integer, primary: true }
+
+GaleriaPhoto:
+  columns:
+    galeria_id: { type: integer, primary: true }
+    photo_id: { type: integer, primary: true }

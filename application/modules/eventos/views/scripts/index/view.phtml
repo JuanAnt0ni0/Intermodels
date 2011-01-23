@@ -1,0 +1,20 @@
+<?php
+$this->headLink()->prependStylesheet( $this->baseUrl().'/css/bxSlider.css' );
+$this->headScript()->prependFile( $this->baseUrl() . '/scripts/lib/jquery.bxSlider.js' );
+?>
+<div id="pageEventoView">
+    <div><?php echo $this->evento->titulo; ?></div>
+    <div><?php echo $this->evento->fecha; ?></div>
+    <div><?php echo substr($this->evento->hora, 0, 5); ?> horas</div>
+    <div><?php echo $this->evento->contenido; ?></div>
+    <div>
+        <ul id="slideEvento">
+            <?php foreach ($this->evento->Photos as $foto) : ?>
+            <li>
+                <img src="<?php echo $foto->original; ?>" alt="<?php echo $foto->descripcion; ?>">
+                <div><?php echo $foto->descripcion; ?></div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

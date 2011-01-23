@@ -1,0 +1,43 @@
+<ul class="thumbs noscript">
+    <?php foreach ($this->Modelos as $modelo) : ?>
+    <li>
+        <a class="thumb" name="<?php echo $modelo->apellidos ?>" href="<?php echo $modelo->Photos[0]->original; ?>" title="<?php echo $modelo->apellidos; ?>">
+            <img src="<?php echo $modelo->Photos[0]->thumbnail_1; ?>" alt="<?php echo $modelo->apellidos; ?>" />
+        </a>
+        <div class="caption">
+            <div class="image-title"><?php echo $modelo->apellidos.', '.$modelo->nombres ?></div>
+            <div class="image-desc">
+                <div>Estatura: <?php echo $modelo->estatura; ?> cm </div>
+                <div>Peso: <?php echo $modelo->peso; ?> Kg </div>
+                <div>Zapato: <?php echo $modelo->zapato; ?> (Europa)</div>
+                <div>Edad: <?php echo Neo_Edad::edad($modelo->nacimiento); ?>  años</div>
+                <div>Color Ojos: <?php echo $modelo->ojos; ?></div>
+                <div>Color Cabello: <?php echo $modelo->cabello; ?></div>
+                <div>Longitud de Cabello: <?php echo $modelo->longitud_pelo; ?></div>
+                <?php if ( 'Hombre' == $modelo->sexo ): ?>
+					<div>Torax: <?php echo $modelo->torax; ?> cm </div>
+                <?php else: ?>
+					<div>Pecho: <?php echo $modelo->pecho; ?> cm </div>
+					<div>Cintura: <?php echo $modelo->cintura; ?> cm </div>
+					<div>Cadera: <?php echo $modelo->cadera; ?> cm </div>
+                <?php endif; ?>
+                <div>Nacionalidad: <?php echo $modelo->nacionalidad; ?></div>
+                <div>País de Residencia: <?php echo $modelo->pais; ?></div>
+                <div>Idiomas Hablados: <?php echo $modelo->idiomas; ?></div>
+                <div>Tipo de Talento: <?php echo $modelo->talento; ?></div>
+                <div>Descripción: </div><div><?php echo $modelo->descripcion; ?></div>
+                <div class="listaFotos">
+                    <ul>
+                    <?php foreach ($modelo->Photos as $photo) : ?>
+                        <li>
+                            <a href="javascript:loadPic('<?php echo $modelo->apellidos ?>', '<?php echo $photo->original; ?>');" title="<?php echo $photo->descripcion; ?>"><img src="<?php echo $photo->thumbnail_1; ?>" alt="<?php echo $photo->descripcion; ?>" /></a>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <?php $this->count++; ?>
+    <?php endforeach; ?>
+</ul>

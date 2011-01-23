@@ -1,0 +1,25 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headLink()
+            ->prependStylesheet( $this->baseUrl().'/css/squaregrid.css')
+            ->prependStylesheet( $this->baseUrl().'/css/backend.css')
+            ->prependStylesheet( $this->baseUrl().'/css/all.css');
+    ?>
+    <?php echo $this->jQuery()->addStylesheet($this->baseUrl().'/css/jqueryui.css')->enable()->uiEnable(); ?>
+</head>
+<body>
+<div class="sg-13">
+    <a href="http://www.kromatick.com/" target="_blank"><img src="<?php echo $this->baseUrl() ?>/images/backend/logo.png" width="141" height="30" alt="Kromatick" /></a>
+    <p>Introduce los datos de acceso que te proporcionamos para tu cuenta, si tienes cualquier duda contacta con nosotros.</p>
+    <p class="note"><strong>Recuerda que los campos marcados con * son obligatorios.</strong></p>
+</div>
+<div class="sg-21">
+    <div id="global">
+    <div id="messages"><?php echo $this->flashMessenger(); ?></div>
+    <?php echo $this->layout()->content ?>
+</div></div>
+</body>
+</html>

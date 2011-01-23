@@ -1,0 +1,24 @@
+<div id="pageEventoDetalle">
+<a href="<?php echo $this->url(array('evento' => $this->evento->id), 'addFotoEvento') ?>">Agregar Foto</a> |
+<a href="<?php echo $this->url(array('evento' => $this->evento->id), 'editEvento') ?>">Editar</a>
+<table>
+    <tr>
+        <td>Titulo: </td>
+        <td><?php echo $this->evento->titulo ?></td>
+    </tr>
+    <tr>
+        <td>Fecha: </td>
+        <td><?php echo $this->evento->fecha ?></td>
+    </tr>
+    <tr>
+        <td>Hora: </td>
+        <td><?php echo $this->evento->hora ?></td>
+    </tr>
+    <tr>
+        <td>Contenido: </td>
+        <td><?php echo $this->evento->contenido ?></td>
+    </tr>
+</table>
+<?php echo $this->partial()->setObjectKey('Evento')
+                ->partial('eventos/listaFotos.phtml', $this->evento); ?>
+</div>

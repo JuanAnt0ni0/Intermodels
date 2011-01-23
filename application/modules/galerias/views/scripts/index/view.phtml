@@ -1,0 +1,18 @@
+<?php
+$this->headLink()->prependStylesheet( $this->baseUrl().'/css/bxSlider.css' );
+$this->headScript()->prependFile( $this->baseUrl() . '/scripts/lib/jquery.bxSlider.js' );
+?>
+<div id="pageGaleriaView">
+    <div><?php echo $this->galeria->titulo; ?></div>
+    <div><?php echo $this->galeria->contenido; ?></div>
+    <div>
+        <ul id="slideGaleria">
+            <?php foreach ($this->galeria->Photos as $foto) : ?>
+            <li>
+                <img src="<?php echo $foto->original; ?>" alt="<?php echo $foto->descripcion; ?>">
+                <div><?php echo $foto->descripcion; ?></div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

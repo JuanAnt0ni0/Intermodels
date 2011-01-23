@@ -1,0 +1,55 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php
+echo $this->headTitle();
+echo $this->headMeta();
+echo $this->headLink()
+          ->prependStylesheet( $this->baseUrl().'/css/fronted.css');
+
+echo $this->jQuery()->addStylesheet($this->baseUrl().'/css/jqueryui.css')->enable()->uiEnable();
+
+echo $this->headScript()->appendFile( $this->baseUrl() . '/scripts/fronted.js')
+                        ->prependFile( $this->baseUrl() . '/scripts/lib/jquery.jacg.js')
+						->prependFile( $this->baseUrl() . '/scripts/lib/fadeLink.js')
+                        ->prependFile( $this->baseUrl() . '/scripts/lib/jquery.dropshadow.js');;
+?>
+<script type="text/javascript">
+     $(window).load(function () {
+      $('#firmas').jacg({'radius': '0' ,'start': '#585858',
+      'end': '#f6f6f6',}).css({'-webkit-box-shadow': 'rgba(10, 10, 10, 0.4) 1px 1px 10px', '-mox-box-shadow': '1px 1px 10px rgba(10, 10, 10, 0.4)' });$('#footer').jacg({'radius': '0' ,'start': '#3a3a3a',
+      'end': '#000000',}).css({'-webkit-box-shadow': 'rgba(10, 10, 10, 0.4) 1px 1px 10px', '-mox-box-shadow': '1px 1px 10px rgba(10, 10, 10, 0.4)' });
+      });
+      
+    $(function(){
+       $('#degraheader,#carrusel,#caja1,#caja2').dropShadow();
+    })
+</script>
+</head>
+<body>
+<div id="degraheader">
+    <?php echo $this->partial('headerFronted.phtml') ?>
+    <div id="head2">
+        <?php echo $this->partial('menuFronted.phtml') ?>
+    </div>
+</div>
+<div id="messages"><?php echo $this->flashMessenger(); ?></div>
+<div id="main">
+    <?php echo $this->layout()->content ?>
+</div>
+<div id="firmas">  <ul>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/adidas_logo.png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/tienda_bershka_logo.png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/logo_ECI(2).png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/desigual.png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/H-M-logo.png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/Massimo_Dutti.png" height="31" /></li>
+    <li><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/mango.png" height="31" /></li>
+    <li class="final"><img src="<?php echo $this->baseUrl()?>/images/fronted/logos/zara-.png" height="31" /> </li>
+  </ul></div>
+<?php echo $this->partial('footerFronted.phtml') ?>
+<script type="text/javascript">
+    swfobject.registerObject("FlashID");
+</script>
+</body>
+</html>

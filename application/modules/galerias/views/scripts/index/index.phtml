@@ -1,0 +1,10 @@
+<div id="pageGalerias">
+    <?php foreach ($this->galerias as $galeria) : ?>
+    <div>
+        <p>
+            <?php echo $galeria->titulo; ?> -
+            <a href="<?php echo $this->url(array('galeria' => $galeria->id, 'titulo' => $galeria->titulo), 'galeriaView') ?>">detalles</a>
+        </p>
+    </div>
+    <?php endforeach; ?>
+</div>

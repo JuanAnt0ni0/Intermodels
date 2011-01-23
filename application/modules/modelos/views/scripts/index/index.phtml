@@ -1,0 +1,47 @@
+<?php
+$this->headLink()
+     ->prependStylesheet( $this->baseUrl() . '/css/colorbox.css')
+     ->prependStylesheet( $this->baseUrl() . '/css/galleriffic/galleriffic-5.css')
+     ->prependStylesheet( $this->baseUrl() . '/css/galleriffic/black.css')
+     ->prependStylesheet( $this->baseUrl() . '/css/galleriffic/basic.css');
+
+$this->headScript()
+     //->prependFile( $this->baseUrl() . '/scripts/lib/jquery.colorbox.js')
+     ->prependFile( $this->baseUrl() . '/scripts/galleriffic/jquery.opacityrollover.js')
+     ->prependFile( $this->baseUrl() . '/scripts/galleriffic/jquery.galleriffic.js')     
+     ->prependFile( $this->baseUrl() . '/scripts/galleriffic/jquery.history.js');
+
+if($this->modelos->count()){
+?>
+<script>
+function loadPic(name, url){
+    $("a[class='advance-link'] img[alt='"+name+"']").attr('src', url);
+}
+</script>
+<div id="pageModelos">
+    <div id="page">
+        <div id="container">
+            <div class="navigation-container">
+                <div id="thumbs" class="navigation">
+                    <?php echo $this->partial()->setObjectKey('Modelos')
+                                    ->partial('modelo.phtml', $this->modelos); ?>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slideshow-container">
+                    <div id="controls"  class="controls"></div>
+                    <div id="loading"   class="loader"></div>
+                    <div id="slideshow" class="slideshow">
+                    </div>
+                </div>
+                <div id="caption" class="caption-container">
+                    <div class="photo-index"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+}else{ ?>
+<div> No existen Modelos. </div>
+<?php } ?>

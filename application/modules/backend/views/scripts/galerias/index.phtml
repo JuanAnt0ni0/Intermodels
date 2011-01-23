@@ -1,0 +1,14 @@
+<div id="pageGaleria">
+    <div class="sg-35">
+    <a href="<?php echo $this->url(array(), 'addGaleria') ?>">Nuevo Galeria</a>
+    <?php
+    if($this->galerias->count()){
+        echo $this->partial()->setObjectKey('Galerias')
+                             ->partial('galerias/listaGaleria.phtml', $this->galerias);
+        echo $this->paginationControl($this->galerias, 'Sliding', 'galerias/paginationGaleria.phtml');
+    }else{
+        ?><div>No existen Galerias</div><?php
+    }
+    ?>
+    </div>
+</div>

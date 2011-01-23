@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/* CSS Document */
+/* COMUN */
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family:Arial, Helvetica, sans-serif;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+li a, p a, li img {
+	text-decoration:none;
+	border-style:none;
+	color:#707070;
+}
+li a:hover, p a:hover {
+	color: #C764EC;
+}
+a{
+outline-style: none;
+text-decoration:none;
+}
+/* HEADER */
+#degraheader {
+	background-color:#FFF;
+	background-repeat:repeat-x;
+	border-top: #000 solid 3px;
+
+}
+#header {
+	height:145px;
+	text-align:center;
+}
+#header img{
+	border: 0px;
+}
+#head2 {
+	height:33px;
+	background-image:url(../images/fronted/fhead2.png);
+	background-repeat:repeat-x;
+}
+#head2 #menu{
+	color: #FFFFFF;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 8px;
+}
+#head2 #menu a{
+	color: #CC689A;
+	text-decoration: none;
+}
+#head2 #menu a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#menu .linkmenu{
+	display: inline-block;
+	/*width: 150px;*/
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+}
+#banda {
+	top:65px;
+	width:898px;
+	background:#000;
+	height: 33px;
+	border:transparent 1px solid;
+	position:relative;
+	background-image:url(../images/fronted/logo.png);
+	background-repeat: no-repeat;
+	background-position: 26px -37px;
+}
+#banda ul {
+	margin: 8px 0 0 380px;
+}
+#banda li {
+	text-transform: uppercase;
+	list-style:none;
+	float:left;
+	margin: 0 3px;
+	color:#CCC;
+	font-size:17px;
+}
+/* MAIN */
+#main {
+	background-image:url(../images/fronted/humo.png);
+	background-repeat:no-repeat;
+	width: 1200px;
+	margin:auto;
+}
+#cajaPolitica {
+	width:740px;
+	margin: 0 auto;
+	height:510px;
+	color: #1B1B1B;
+	background: transparent url(../images/fronted/back_white.png) top left repeat;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: justify;
+	overflow-y: scroll;
+}
+#cajaPolitica .contentBox{
+	padding: 25px;
+}
+#cajaSobre {
+	width:740px;
+	margin: 0 auto;
+	height:510px;
+	color: #1B1B1B;
+	background: transparent url(../images/fronted/back_white.png) top left repeat;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: justify;
+}
+#cajaSobre .contentBox{
+	padding: 25px;
+}
+
+#cajaServicios {
+	width:740px;
+	margin: 0 auto;
+	height:510px;
+	color: #1B1B1B;
+	background: transparent url(../images/fronted/back_white.png) top left repeat;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: justify;
+}
+
+#cajaServicios .contentBox{
+	padding: 25px;
+}
+
+#cajaPerfiles {
+	width:740px;
+	margin: 0 auto;
+	height:510px;
+	color: #1B1B1B;
+	background: transparent url(../images/fronted/back_white.png) top left repeat;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: bold;
+}
+#cajaContacto{
+	width:740px;
+	margin: 0 auto;
+	height:510px;
+	color: #1B1B1B;
+	background: transparent url(../images/fronted/back_white.png) top left repeat;
+	font-family: Arial, Helvetica;
+	font-size: 13px;
+	font-weight: bold;
+}
+#cajaContacto .contentBox{
+	padding: 25px;
+}
+#carrusel {
+	width:740px;
+	margin: 0 auto;
+	height:300px;
+	background-color:#FFF;
+}
+#mcajas {
+	width:740px;
+	margin: 0 auto;
+	overflow:hidden;
+	height: 1%;
+}
+#caja1 {
+	width:260px;
+	float:left;
+}
+#caja2 {
+	width:390px;
+	float:right;
+	background-image:url(../images/fronted/ndd.png);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.caja {
+	background-color:#FFF;
+	min-height: 110px;
+	padding: 15px;
+	border-bottom:#000 solid 9px;
+	margin-top: 30px;
+	margin-bottom:30px;
+}
+.caja strong, .caja label {
+	text-transform:uppercase;
+	font-size: small;
+}
+.caja p {
+	margin-top: 0;
+	margin-bottom:3px;
+	font-size: small;
+}
+.caja label {
+	float:left;
+	clear:both;
+	margin-top:3px;
+	width: 25%;
+}
+.caja input {
+	background-color:#CCC;
+	border:none;
+	text-transform:uppercase;
+	width: 30%;
+	margin-top:3px;
+}
+#caja1 img {
+	border:solid #666 0px;
+	float:left;
+	width:108px;
+	height: 108px;
+	margin-right: 15px;
+}
+#firmas {
+	background-image:url(../images/ffirmas.png);
+	background-repeat:repeat-x;
+	height:111px;
+	border-top: #000 solid 6px;
+	border-bottom: #000 solid 6px;
+}
+#firmas ul {
+	margin: 0 auto;
+	width:740px;
+	top: 50%;
+	position:relative;
+	padding:0;
+}
+#firmas li {
+	text-transform: uppercase;
+	list-style:none;
+	float:left;
+	margin: -18px 15px 0 0;
+}
+#firmas li img{
+height: 31px;
+width:auto;
+}
+.final {
+	margin-right:0 !important;
+}
+/* FOOTER */
+
+#footer {
+	margin-top:0;
+	background-color:#000;
+	color: #666;
+	padding-top: 15px;
+	overflow:hidden;
+	height: 1%;
+	font: 0.75em/19px Arial, Helvetica, sans-serif !important;
+}
+#footcont {
+	width: 900px;
+	margin:auto;
+}
+#footer ul {
+	padding:0;
+	margin: 0 0 0 80px;
+	float:left;
+}
+#footer li {
+	list-style:none;
+}
+#footer p {
+	margin:0;
+	padding:0;
+}
+.kromatick a {
+	height:45px;
+	float:right;
+	background-image:url(../images/fronted/logo_18.png);
+	background-repeat:no-repeat;
+	width:96px;
+	margin: 0 80px 50px 0;
+	background-position:left bottom;
+	overflow:visible;
+}
+.kromatick a:hover {
+	background-position:right bottom;
+}
+.derechos {
+	clear:both;
+	text-align:right;
+	height: 65px;
+}
+.mrHide{
+	display:none;
+}
+
+/*******************************************************************************/
+/* Modelos
+/*******************************************************************************/
+/* ListaFotos */
+.listaFotos {
+    /*background-color: #444;*/
+    padding: 10px;
+    /*width: 520px;*/
+}
+.listaFotos ul { list-style: none; }
+.listaFotos ul li { display: inline-block; }
+.listaFotos ul img {
+    border: 5px solid #3e3e3e;
+    border-width: 5px 5px 20px;
+}
+.listaFotos ul a:hover img {
+    border: 5px solid #fff;
+    border-width: 5px 5px 20px;
+    color: #fff;
+}
+.listaFotos ul a:hover { color: #fff; }

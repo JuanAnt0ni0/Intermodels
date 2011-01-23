@@ -1,0 +1,26 @@
+<table class="tgrande">
+<caption>Lista de Modelos</caption>
+<thead class="tcabecera">
+    <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Estado</th>
+        <th colspan="4">Opciones</th>
+    </tr>
+</thead>
+<tbody class="datos">
+<?php foreach ($this->Modelos as $modelo) : ?>
+    <tr>
+        <td><?php echo $modelo->nombres ?></td>
+        <td><?php echo $modelo->apellidos ?></td>
+        <td><?php echo $modelo->status ?></td>
+        <td><a href="<?php echo $this->url(array('modelo' => $modelo->id), 'detalleModelo') ?>">Detalle</a></td>
+        <td><a href="<?php echo $this->url(array('modelo' => $modelo->id), 'editModelo') ?>">Editar</a></td>
+        <td><a href="<?php echo $this->url(array('modelo' => $modelo->id), 'deleteModelo') ?>">Eliminar</a></td>
+        <?php if(!$modelo->status) :?>
+        <td><a href="<?php echo $this->url(array('modelo' => $modelo->id), 'activarModelo') ?>">Activar</a></td>
+        <?php endif; ?>
+    </tr>
+<?php endforeach; ?>
+</tbody>
+</table>

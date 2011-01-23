@@ -1,0 +1,68 @@
+<div id="pageModeloDetalle">
+<a href="<?php echo $this->url(array('modelo' => $this->modelo->id), 'addFotoModelo') ?>">Agregar Foto</a> |
+<a href="<?php echo $this->url(array('modelo' => $this->modelo->id), 'editModelo') ?>">Editar</a>
+<!--<a href="<?php echo $this->url(array('modelo' => $this->modelo->id), 'addVideo') ?>">Agregar Video</a>-->
+<table>
+    <tr>
+        <td>Nombres: </td>
+        <td><?php echo $this->modelo->nombres ?></td>
+    </tr>
+    <tr>
+        <td>Apellidos: </td>
+        <td><?php echo $this->modelo->apellidos ?></td>
+    </tr>
+    <tr>
+        <td>Telefono: </td>
+        <td><?php echo $this->modelo->telefono ?></td>
+    </tr>
+    <tr>
+        <td>E-mail: </td>
+        <td><?php echo $this->modelo->email ?></td>
+    </tr>
+    <tr>
+        <td>Edad: </td>
+        <td><?php echo Neo_Edad::edad($this->modelo->nacimiento); ?> años</td>
+    </tr>
+    <tr>
+        <td>Estatura: </td>
+        <td><?php echo $this->modelo->estatura; ?> cm</td>
+    </tr>
+    <tr>
+        <td>Peso: </td>
+        <td><?php echo $this->modelo->peso; ?> Kg</td>
+    </tr>
+    <tr>
+        <td>Ojos: </td>
+        <td><?php echo $this->modelo->ojos; ?></td>
+    </tr>
+    <tr>
+        <td>Cabello: </td>
+        <td><?php echo $this->modelo->cabello; ?></td>
+    </tr>
+    <tr>
+        <td>Descripción: </td>
+        <td><?php echo $this->modelo->descripcion; ?></td>
+    </tr>
+    <?php if ( 'Hombre' == $this->modelo->sexo ) { ?>
+    <tr>
+        <td>Torax: </td>
+        <td><?php echo $this->modelo->torax; ?> cm</td>
+    </tr>
+    <?php } else {?>
+    <tr>
+        <td>Pecho: </td>
+        <td><?php echo $this->modelo->pecho; ?> cm</td>
+    </tr>
+    <tr>
+        <td>Cintura: </td>
+        <td><?php echo $this->modelo->cintura; ?> cm</td>
+    </tr>
+    <tr>
+        <td>Cadera: </td>
+        <td><?php echo $this->modelo->cadera; ?> cm</td>
+    </tr>
+    <?php } ?>
+</table>
+<?php echo $this->partial()->setObjectKey('Modelo')
+                ->partial('modelos/listaFotos.phtml', $this->modelo); ?>
+</div>

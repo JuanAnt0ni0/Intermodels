@@ -1,0 +1,25 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php
+echo $this->headTitle();
+echo $this->headMeta();
+echo $this->headLink()
+          ->prependStylesheet( $this->baseUrl().'/css/backend.css');
+
+echo $this->jQuery()->addStylesheet($this->baseUrl().'/css/jqueryui.css')->enable()->uiEnable();
+
+echo $this->headScript()->appendFile( $this->baseUrl() . '/scripts/backend.js');
+?>
+</head>
+<body>
+<?php echo $this->partial('headerBackend.phtml') ?>
+<?php echo $this->partial('menuBackend.phtml') ?>
+    <div>
+        <div id="messages"><?php echo $this->flashMessenger(); ?></div>
+        <div class="dashboard-container">
+            <?php echo $this->layout()->content ?>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div id="pageGaleriaDetalle">
+<a href="<?php echo $this->url(array('galeria' => $this->galeria->id), 'addFotoGaleria') ?>">Agregar Foto</a> |
+<a href="<?php echo $this->url(array('galeria' => $this->galeria->id), 'editGaleria') ?>">Editar</a>
+<table>
+    <tr>
+        <td>Titulo: </td>
+        <td><?php echo $this->galeria->titulo ?></td>
+    </tr>
+    <tr>
+        <td>Contenido: </td>
+        <td><?php echo $this->galeria->contenido ?></td>
+    </tr>
+</table>
+<?php echo $this->partial()->setObjectKey('Galeria')
+                ->partial('galerias/listaFotos.phtml', $this->galeria); ?>
+</div>
